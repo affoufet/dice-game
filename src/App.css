@@ -1,38 +1,193 @@
-.App {
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  outline:none;
+  border-radius: 5px;
+  font-family: 'Righteous', cursive;
+}
+
+html{
+  font-size: 10px;
+}
+
+/* ---------------------------- Player -----------------------------*/
+/* the players div*/
+.players{
+  display: flex;
+  padding:2rem;
+  width:100%;
+}
+.player{
+  width:100%;
+  height:60vh;
+  margin: 2rem 0;
   text-align: center;
+  background-color:#d7eaea;
+  border-radius: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
+.playerName{
+  margin: 1rem 0;
+  font-size: 3rem;
+
+}
+
+/* ------------- dice */
+.dices{
+  width:10rem;
+  display:flex;
+  flex-direction: column;
+}
+
+.dice{
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 5px;
+  margin:5px 0;
+  background-position: center/cover;
+  background-repeat: no-repeat;
+  background-color: white;
+}
+
+.currentPlayer{
+  background-color: #acdbdf;
+}
+
+.btn{
+  height: 3rem;
+  width:10rem;
+  margin: 1rem 0;
+  border:none;
+  font-size: 2.3rem;
+  background-color:#ea7362;
+  color:#ffd6b6;
+  box-shadow: 5px 5px 10px  #5c2626;
+  cursor: pointer;
+}
+
+.btn:hover, .newGame:hover{
+  color:#5c2626;
+  box-shadow: 5px 5px 10px  #ffd6b6;
+}
+/* .dices .btn{
+  width:10rem;
+} */
+
+.btnDisable{
+  opacity: 0.8;
   pointer-events: none;
+  background-color: gray;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#boardGame{
+  position: relative;
+  background-color: #69779b;
+  width:100vw;
+  height:100vh;
+  margin:auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#winScore{
+  width:10rem;
+  height: 3rem;
+  text-align: center;
+  border:none;
+  margin: 1rem 0 ;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+.totalScore{
+  margin:6rem 0;
+  height: 30%;
+  width:100%;
+  font-size: 4rem;
+}
+
+.roundScore{
+  margin:5rem 0;
+  height: 15%;
+  width:100%;
+  font-size: 2rem;
+}
+
+.winner{
+  position: relative;
+  background-image: url("https://i.gifer.com/6ob.gif");
+  font-size: 3rem;
+  text-align: center;
+  color:#ea7362
+}
+.action{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  position: absolute;
+  width:10rem;
+  height: 50vh;
+  top: -30%; left: 0; bottom: 0; right: 0;
+}
+
+.newGame{
+  width: 15rem;
+}
+
+.hidden{
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .players{
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .player{
+    height: 42vh;
+    margin:0;
+    padding-top: 2rem;
+  }
+
+  .playerName{
+    font-size: 2.5rem;
+  }
+  .totalScore{
+    margin:1rem 0;
+    font-size: 2.5rem;
+  }
+
+  .roundScore{
+    margin:1rem 0;
+  }
+
+  .dices{
+    flex-direction: row;
+    width:100vw;
+  }
+
+  .dice{
+    height: 6rem;
+    width:6rem;
+    margin:0 5px;
+  }
+
+  .btn,#winScore{
+    width: 6rem;
+    margin-right:10px;
+  }
+  .action{
+    display: flex;
+    flex-direction: row;
+    overflow-wrap: break-word;
+    position: absolute;
+    top: 30%; right:60%; 
+  }
+  .newGame{
+    width:12rem;
+  }
+  .winner p{
+    font-size: 2rem;
   }
 }
